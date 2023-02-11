@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Recharge
+{% endblock title %}
+
+{% block body %}
+<div class="container   text-center" >
+    
+    <h1> Add New Recharge </h><hr>
+</div>    
+<div class="container text-center  mb-2 py-20">   
+    <h3 > Add Recharge</h3>
+ <form method="post" action="/addrecharge/">
+    {% csrf_token %}
+ <div class="form-group text-primary bg-dark" >
+    <label for="phone" >Phone Number</label>
+    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone Number">
+  </div>
+<div class="form-group  text-primary bg-dark">
+    <label for="Recharge Amount">Recharge Amount</label>
+    <input type="number" class="form-control" id="number" name="number" placeholder="Enter Your Recharge Amount">
+  </div>
+  <div class="form-group  text-primary bg-dark">
+    <label for="Operator">Operator Name</label>
+    <input type="text" class="form-control" id="name" name="operator" placeholder="Enter Your Operator">
+  </div>
+  <div class="form-group  text-primary bg-dark">
+    <label for="desc">Full Description</label>
+    <textarea class="form-control" id="desc" rosws="3" name="desc"></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>
+{% endblock body %}
